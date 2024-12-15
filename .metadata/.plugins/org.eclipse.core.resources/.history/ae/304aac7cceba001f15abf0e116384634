@@ -1,0 +1,18 @@
+package myProj.MainClass;
+
+import myProj.service.StudentService;
+import myProj.service.serviceImpl.StudentServiceimplementation;
+
+public class StudentApp {
+
+	public static void main(String[] args) {
+		
+		StudentService studentService = new StudentServiceimplementation();
+		
+		System.out.println("1. Add Student");
+		System.out.println("1. Get Student");
+		System.out.println("1. Update Student");
+		System.out.println("1. Delete Student");
+		System.out.println("1. Display All Students");
+	}
+}

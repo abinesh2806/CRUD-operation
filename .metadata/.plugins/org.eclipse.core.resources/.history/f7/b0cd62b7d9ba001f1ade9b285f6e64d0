@@ -1,0 +1,77 @@
+package myProj.MainClass;
+
+import java.util.Scanner;
+
+import myProj.entity.Student;
+import myProj.service.StudentService;
+import myProj.service.serviceImpl.StudentServiceimplementation;
+
+public class StudentApp {
+
+	public static void main(String[] args) {
+
+		StudentService studentService = new StudentServiceimplementation(); //UpCasting 
+
+		Scanner sc = new Scanner(System.in);
+		boolean f = true;
+
+		while (f) {
+			System.err.println("< ***** Enter your option: ****>");
+			System.out.println("<===== 1. Add Student =====>");
+			System.out.println("<===== 2. Get Student =====>");
+			System.out.println("<===== 3. Update Student =====>");
+			System.out.println("<===== 4. Delete Student =====>");
+			System.out.println("<===== 5. Display All Students =====>");
+
+			switch (sc.nextInt()) {
+			case 1: {
+				System.out.println("< Enter Student details to add: >");
+				int id = sc.nextInt();
+				String name = sc.next();
+				int age = sc.nextInt();
+				long phone = sc.nextLong();
+				String email = sc.next();
+				studentService.addStudent(new Student(id, name, age, phone, email));
+				break;
+			}
+			case 2: {
+				System.out.println("< Enter Student id to get details: >");
+				int id = sc.nextInt();
+				try {
+				studentService.getStudent(id);
+				}catch(Exception e) {
+					System.out.println(e.getMessage());
+				}
+				break;
+			}
+			case 3: {
+				System.out.println("< Enter Student id, name, age, phone, email to update: ");
+				int id = sc.nextInt();
+				String name = sc.nextLine();
+				int age = sc.nextInt();
+				long phone = sc.nextLong();
+				String email = sc.next();
+				studentService.updateStudent(id, name, age, phone, email);
+				break;
+			}
+			case 4: {
+				System.out.println("< Enter student id to delete >");
+				int id = sc.nextInt();
+				try {
+				studentService.deleteStudent(id);
+				}catch(Exception e) {
+					System.out.println(e.getMessage());
+				}
+				break;
+			}
+			case 5: {
+				studentService.displayAllStudents();
+			}
+			default:
+				System.err.println("Invalid Option.......");
+				break;
+			}
+//			System.exit(0);
+		}
+	}
+}

@@ -1,0 +1,12 @@
+package myProj;
+
+import myProj.com.entity.Student;
+
+public interface StudentService {
+
+	void addStudent(Student student);
+	Student getStudent(int id);
+	void updateStudent(int id, String newName, int newAge);
+	void deleteStudent(int id);
+	void displayAllStudents();
+}

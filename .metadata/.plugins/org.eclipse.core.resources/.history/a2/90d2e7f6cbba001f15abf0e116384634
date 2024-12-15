@@ -1,0 +1,40 @@
+package myProj;
+
+import java.util.HashMap;
+import java.util.Map;
+
+public class StudentServiceimplementation implements StudentService{
+	
+	private Map<Integer, Student> students = new HashMap<>();
+
+	@Override
+	public void addStudent(Student student) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public Student getStudent(int id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void updateStudent(int id, String newName, int newAge) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void deleteStudent() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void displayAllStudents() {
+		// TODO Auto-generated method stub
+		
+	}
+
+}

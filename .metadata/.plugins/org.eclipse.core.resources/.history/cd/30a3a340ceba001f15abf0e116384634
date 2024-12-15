@@ -1,0 +1,14 @@
+package myProj.MainClass;
+
+import myProj.service.StudentService;
+import myProj.service.serviceImpl.StudentServiceimplementation;
+
+public class StudentApp {
+
+	public static void main(String[] args) {
+		
+		StudentService studentService = new StudentServiceimplementation();
+		
+		
+	}
+}

@@ -1,0 +1,64 @@
+package myProj.service;
+
+import java.util.HashMap;
+import java.util.Map;
+
+import myProj.entity.Student;
+
+public class StudentServiceimplementation implements StudentService {
+
+	private Map<Integer, Student> students = new HashMap<>();
+
+	@Override
+	public void addStudent(Student student) {
+		if (students.containsKey(student.getId())) {
+			throw new IllegalArgumentException("Student with ID " + student.getId() + " already exists.");
+		}
+		students.put(student.getId(), student);
+		System.out.println("Student added successfully: " + student);
+
+	}
+
+	@Override
+	public Student getStudent(int id) {
+		if (!students.containsKey(id)) {
+			throw new IllegalArgumentException("No student found with ID " + id);
+		}
+		return students.get(id);
+	}
+
+	@Override
+	public void updateStudent(int id, String newName, int newAge) {
+		if (!students.containsKey(id)) {
+			throw new IllegalArgumentException("No student found with ID " + id);
+		}
+		Student student = students.get(id);
+		student.setName(newName);
+		student.setAge(newAge);
+		System.out.println("Student updated successfully: " + student);
+
+	}
+
+	@Override
+	public void deleteStudent(int id) {
+		if (!students.containsKey(id)) {
+			throw new IllegalArgumentException("No student found with ID " + id);
+		}
+		students.remove(id);
+		System.out.println("Student with ID " + id + " deleted successfully.");
+
+	}
+
+	@Override
+	public void displayAllStudents() {
+		if (students.isEmpty()) {
+			System.out.println("No students available.");
+			return;
+		}
+		for (Student student : students.values()) {
+			System.out.println(student);
+		}
+
+	}
+
+}

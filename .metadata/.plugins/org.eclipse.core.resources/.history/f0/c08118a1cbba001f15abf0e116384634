@@ -1,0 +1,10 @@
+package myProj;
+
+public interface StudentService {
+
+	void addStudent();
+	Student getStudent();
+	void updateStudent();
+	void deleteStudent();
+	void displayAllStudents();
+}

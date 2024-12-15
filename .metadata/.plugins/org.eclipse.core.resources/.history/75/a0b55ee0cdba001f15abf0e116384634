@@ -1,0 +1,9 @@
+package myProj.MainClass;
+
+public class StudentApp {
+
+	public static void main(String[] args) {
+		
+		
+	}
+}
